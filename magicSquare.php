@@ -95,5 +95,6 @@ $magicsquare=new MagicSquare();
 $magic_Square=$magicsquare->arrayInitialization();
 $magic_array=$magicsquare->mainFunction($magic_Square);
 $magicsquare->displayMagicSquare($magic_array);
+
  
 ?>

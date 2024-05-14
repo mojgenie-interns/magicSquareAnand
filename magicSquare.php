@@ -1,6 +1,6 @@
 <?php
 class MagicSquare
-{
+{   
     public $size;
     public $startNumber;
     public $row;
@@ -9,8 +9,9 @@ class MagicSquare
 
     function  __construct()
     {
-        $this->size=readline("\nEnter the Size Of the Magic Square:\t");
-        $this->startNumber=readline("\n Enter The Start Number:");
+        global $argv;
+        $this->size=$argv[1];
+        $this->startNumber=$argv[2];
         $this->row=0;
         $this->column=(int)$this->size/2;
     }

@@ -12,8 +12,7 @@ class CircularGrid
         $this->rows = $rows;
         $this->columns = $columns;
         $this->data = array_fill(0, $rows, array_fill(0, $columns, 0));
-        //$this->currentRow = 0;
-        //$this->currentCol = 0;
+        
     }
 
     function reset()
@@ -131,12 +130,13 @@ function display(GridDisplayInterface $display): void
     $display->display($this->grid);
 }
 }
-echo "Enter Size \n Enter starting number \n Enter startingrow \n Enter startingcolumn";
+global $argv; 
+//echo "Enter Size \n Enter starting number \n Enter startingrow \n Enter startingcolumn";
 
-$size=readLine();
-$startingNumber=readLine();
-$startingRow=readLine();
-$startingColumn=readLine();
+$size = getLine("Enter the size :");
+$startingNumber = getLine("Enter the First value :");
+$startingColumn = getLine("Enter the Row Position");
+$startingRow = getLine("Enter the Column Position:");
 $magicSquare = new MagicSquare($size);
 $magicSquare->generate($startingNumber, $startingRow, $startingColumn);
  

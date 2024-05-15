@@ -9,6 +9,12 @@ class TicTacIn{
     public function __constructor()
     {
         $this->choice = readline ("Enter the choice of first Player:");
+        if( $this->choice != 'x'||'X'||'o'||'O')
+        {
+            echo "Wrong input";
+            return ;
+        }
+
         if($this->choice=="X"||$this->choice=="x")
         {
             $this->player1Choice = "X" ;
@@ -27,7 +33,7 @@ class TicTacIn{
         return $this->position;
 
     }
-    function entryValues(TicTacToe $obj,$choice)
+    function entryValues(TicTacToe $obj,$ticTacOutObj)
     {
         $count = 1;
         for ($i = 0;$i < 3;$i++){

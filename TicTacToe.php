@@ -36,10 +36,14 @@ class TicTacIn{
     function entryValues(TicTacToe $obj,$ticTacOutObj)
     {
         $count = 1;
-        for ($i = 0;$i < 3;$i++){
-            for ($j = 0;$j < 3;$j++){
-                if($count == $position)
-                &obj-> data[$i][$j]=
+
+        for ($i = 0;$i < 3;$i++)
+        {
+
+            for ($j = 0;$j < 3;$j++)
+            {
+                if($count == $obj->position)
+                $obj-> data[$i][$j]=$ticTacOutObj->choise;
                 $count++;
             }
 
@@ -50,8 +54,12 @@ class TicTacOut{
     function displayPosition()
     {
         $count = 1;
-        for ($i = 0;$i < 3;$i++){
+
+        for ($i = 0;$i < 3;$i++)
+        {
+
             echo "\n";
+
             for ($j = 0;$j < 3;$j++){
                 echo $count,"\t";
                 $count++;
@@ -64,6 +72,7 @@ class TicTacOut{
     {
         for ($i = 0;$i < 3;$i++){
             echo "\n";
+
             for ($j = 0;$j < 3;$j++){
                 echo $data[$i][$j],"\t";
             }
@@ -76,21 +85,28 @@ class Result{
     
     public function checkResult($data)
     {
-        if( &this->data[0][0] == &this->data[0][1]== &this->data[0][2])
+        if( $this->data[0][0] == $this->data[0][1] && $this->data[0][1] == $this->data[0][2])
             return true;
-        if( &this->data[1][0] == &this->data[1][1]== &this->data[1][2])
+
+        if( $$his->data[1][0] == $this->data[1][1] && $this->data[1][1] == $this->data[1][2])
             return true;
-        if( &this->data[2][0] == &this->data[2][1]== &this->data[2][2])
+
+        if( $this->data[2][0] == $this->data[2][1] && $this->data[2][1] == $this->data[2][2])
             return true;
-        if( &this->data[0][0] == &this->data[1][0]== &this->data[2][0])
+
+        if( $this->data[0][0] == $this->data[1][0] && $this->data[1][0] == $this->data[2][0])
             return true;
-        if( &this->data[0][1] == &this->data[1][1]== &this->data[2][1])
+
+        if( $this->data[0][1] == $this->data[1][1] && $this->data[1][1] == $this->data[2][1])
             return true;
-        if( &this->data[0][2] == &this->data[1][2]== &this->data[2][2])
+
+        if( $this->data[0][2] == $this->data[1][2] && $this->data[1][2] == $this->data[2][2])
             return true;
-        if( &this->data[2][1] == &this->data[1][1]== &this->data[0][2])
+
+        if( $this->data[2][1] == $this->data[1][1] && $this->data[1][1] == $this->data[0][2])
             return true;
-        if( &this->data[0][0] == &this->data[1][1]== &this->data[2][2])
+
+        if( $this->data[0][0] == $this->data[1][1] && $this->data[1][1] == $this->data[2][2])
             return true;
 
         return false;
@@ -101,17 +117,20 @@ class TicTacToe{
     public $data;
     public $player1Choice;
     public $player2Choice;
+    public $position;
     public $result;
     public Result $resultObect;
     public TicTacin $ticTacInObj;
     public TicTacOut $ticTacOutObj;
 
 
-    function __construct(){
+    function __construct()
+    {
         $this->data = array_fill(0, 3, array_fill(0, 3, 0));
     }
 
-    $this->ticTacOut->readPosition()
+}
+$ticTacOutObj->displayPosition();
 
     for ( $i =0 ; $i < 9; $i++)
     {
@@ -121,9 +140,4 @@ class TicTacToe{
         $this->ticTacOut->checkResult($this->data);
         
     }
-
-
-
-}
-
 ?> 
